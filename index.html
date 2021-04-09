@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi viñedo IoT </title>
+    <!--BOOSTRAP CDN-->
+    <link rel="stylesheet" href="css/estilos.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <!--navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Mi viñedo IoT</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item logged-out" style="display: none;">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#SignInModal">SignIn</a>
+                    </li>
+                    <li class="nav-item logged-out" style="display: none;">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#SignupModal">SignUp</a>
+                    </li>
+                    <li class="nav-item logged-in" style="display: none;">
+                        <a class="nav-link  " href="#" id="logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--MAIN CONTENT-->
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <ul class="list-group posts">
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <!-- Modal Sign up-->
+    <div class="modal fade" id="SignupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="signup-form">
+                        <div class="form-group">
+                            <input type="text" id="signup-email" class="form-control" placeholder="Title" required>
+
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="signup-password" class="form-control" placeholder="Password"
+                                required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Signup</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal SignIn-->
+    <div class="modal fade" id="SignInModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="login-form">
+                        <div class="form-group">
+                            <input type="text" id="login-email" class="form-control" placeholder="Title" required>
+
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="login-password" class="form-control" placeholder="Password"
+                                required>
+                        </div>
+                        <button type="submit" class="btn btn-secondary btn-block">Login</button>
+                        <button type="button" class="btn btn-info btn-block" id="googleLogin">Login with
+                            Google</button>
+                        <button type="button" class="btn btn-primary btn-block" id="facebookLogin">Login with
+                            facebook</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p>
+    <ol class="scorelist">
+
+    </ol>
+    </p>
+    <main>
+        <!-- Acerca de nosotros -->
+        <section class="acerca-de">
+            <div class="info-container">
+            <h1>Acerca de Nosotros</h1>
+            <p>Somos una empresa destacada por el diseño y implementacion de viñedos con tecnologia IoT, elaborados con tecnologia confiable y economica para el facil manejo del cliente.</p>
+            <p>¿quieres aumentar la produccion y mejorar el cultivo? estamos ubicados en la ciudad de Neiva.</p>
+            <div class="about-gallery">
+                <img src="img/i2.jpg" alt="">
+                <img src="img/i1.jpg" alt="">
+                <img src="img/i3.jpg" alt="">
+            </div> 
+
+            <div class="about-more"><button>Leer mas</button></div>
+
+            </div>
+            </section>
+        <!-- Nuestros equipo -->
+        <section class="team contenedor" id="equipo">
+            <h3>Nuestro equipo</h3>
+            <p class="after">Conoce a la gente asombrosa y creativa</p>
+            <div class="card">
+                <div class="content-card">
+                    <div class="people">
+                        <img src="img/p1.jpg" alt="">
+                    </div>
+                    <div class="texto-team">
+                        <h4>Name</h4>
+                        <p>Orlando Murcia</p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="people">
+                        <img src="img/p2.jpg" alt="">
+                    </div>
+                    <div class="texto-team">
+                        <h4>Name</h4>
+                        <p>Camilo Gualteros</p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="people">
+                        <img src="img/p3.jpg" alt="">
+                    </div>
+                    <div class="texto-team">
+                        <h4>Name</h4>
+                        <p>Alejandro Quintero</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+         <!-- Nuestros servicios -->
+        <section class="about" id="servicio">
+            <div class="contenedor">
+                <h3>Nuestros servicios</h3>
+                <p class="after">Siempre mejorando para ti</p>
+                <div class="servicios">
+                    <div class="caja-servicios">
+                        <img src="img/heart.png" alt="">
+                        <h4>Creativos</h4>
+                    </div>
+                    <div class="caja-servicios">
+                        <img src="img/responsive.png" alt="">
+                        <h4>asombrosos</h4>
+                    </div>
+                    <div class="caja-servicios">
+                        <img src="img/efectos.png" alt="">
+                        <h4>Confiables</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Nuestros productos -->
+        <section class="our-projects">
+            <div class="skew-arriba"></div>
+        <div class="deg-background"></div>
+        
+        <div class="ejeZproject">
+            <div class="container-project">
+            <div class="project-title">
+                <h2>Nuestros Productos</h2>
+                <hr>
+            </div>
+                <div class="project-img">
+                <img src="img/theme-1.jpg" alt="">
+                <img src="img/theme-2.jpg" alt="">
+                <img src="img/theme-3.jpg" alt="">
+                <img src="img/theme-4.jpg" alt="">
+                <img src="img/theme-5.jpg" alt="">
+                <img src="img/theme-6.jpg" alt="">
+            </div>
+        <div class="skew-abajo"></div>
+        </section>
+
+        <!-- Testimonios -->
+        <section class="testimonios">
+            <div class="testimonios-title">
+            <h2>Testimonios</h2>
+            <hr>
+            </div>
+
+            <div class="box-testimonio">
+            <div class="card-testimonio">
+                <div class="card-img"><img src="img/peaple-1.jpg" alt=""></div>
+                <div class="testimonio-text">
+                <h4>Amanta Castillo</h4>
+                <p>"la implementacion de las Iot a mi viñedo ha sido lo mejor, mi cultivo crece mejor y me genera mayor produccion"</p>
+                </div>
+            </div>
+
+            <div class="card-testimonio">
+                <div class="card-img"><img src="img/peaple-2.jpg" alt=""></div>
+                <div class="testimonio-text">
+                <h4>Clara Smilla</h4>
+                <p>"Gracias a viñedos IoT mi granja genera el doble de fruta y mis cultivos estan protegidos contra cualquier eventualidad."</p>
+                </div>
+                </div>
+
+                <div class="card-testimonio">
+                    <div class="card-img"><img src="img/peaple-3.jpg" alt=""></div>
+                    <div class="testimonio-text">
+                    <h4>Oscar Muñoz </h4>
+                    <p>"El desempeño que genera mi cultivo ha sido el mejor gracias a viñedos IoT sin duda alguna la mejor inversion que he hecho para mi viñedo."</p>
+                    </div>
+                </div>
+
+                <div class="card-testimonio">
+                    <div class="card-img"><img src="img/peaple-4.jpg" alt=""></div>
+                    <div class="testimonio-text">
+                    <h4>Roberto Perez</h4>
+                    <p>"Expertos en cultivos y expertos en viñedos la mejor experiencia y una ejecucion impecable sin contar el manejo de la app que es super comoda y facil para el cliente."</p>
+                    </div>
+                    </div>
+
+            </div>
+        </section>
+
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="skew-arriba"></div>
+    <div class="deg-footer"></div>
+    
+    <div class="ejeZfooter">
+    <div class="footer-content">
+        <div class="footer-title">
+        <h2>Formulario de Contacto</h2>
+        <hr>
+        </div>
+    
+        <div class="formulario-content">
+        <form id="formulario">
+            <label for="user">Nombre:</label>
+            <input type="text" id="user" name="user" placeholder="Ingresa tu Nombre">
+        
+            <label for="direccion">Direccion:</label>
+            <input type="direccion" id="direccion" name="direccion" placeholder="Ingresa tu Direccion">
+    
+            <label for="Telefono">Telefono:</label>
+            <input type="Telefono" id="Telefono" name="Telefono" placeholder="Ingresa tu Telefono">
+        
+            <label for="message">Mensaje:</label>
+            <textarea name="menssage" id="message"></textarea>
+        
+            <div class="send"><button>Enviar</button></div>
+        
+            <div class="mensaje-form">
+            <p>Escribenos un mensaje, con gusto tendras una respuesta de parte de nosotros en muy poco tiempo.</p>
+            </div>
+        </form>
+        </div>
+    
+        <div class="footer-text">
+        <p>&copy; Viñedos IoT - 2021 | Todos los derechos reservados.</p>
+        </div>
+    
+    </div>
+    </div>
+    </footer>
+    <!--Bootstrap Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+        crossorigin="anonymous"></script>
+
+    <!--Firebase Scripts-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyB2-1Z4KGyWxALPiVJiaLgew99AlKQtoGk",
+            authDomain: "fb-tutorial-e51f2.firebaseapp.com",
+            databaseURL: "https://fb-tutorial-e51f2-default-rtdb.firebaseio.com",
+            projectId: "fb-tutorial-e51f2",
+            storageBucket: "fb-tutorial-e51f2.appspot.com",
+            messagingSenderId: "961430732496",
+            appId: "1:961430732496:web:038b5bb286829e054528d5"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const fs = firebase.firestore();
+        var db = firebase.database();
+        var ref = db.ref('ControlVinedoIoT');
+       
+
+
+       
+    </script>
+
+    <!--Custom code-->
+    <script src="main.js"></script>
+</body>
+
+</html>
